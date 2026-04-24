@@ -1,177 +1,192 @@
+"use client"
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function App() {
-  const [activeTab, setActiveTab] = useState("experience");
+export default function Home() {
+  const [activeTab, setActiveTab] = useState("education");
+
+  const summary = "Software Engineer with 3+ years of industry experience building secure, high-throughput financial systems. Expert in Java, Spring Boot, Oracle PL/SQL, and modern web technologies. Passionate about backend infrastructure, system design, and reliable computing, with a research focus on secure transaction monitoring and AI-driven financial architectures.";
 
   const experiences = [
     {
-      role: "Senior Frontend Developer",
-      company: "TechCorp Inc.",
-      period: "Jan 2023 - Present",
-      color: "#FF6B6B",
-      points: [
-        "Led a team of 8 developers to build a SaaS platform serving 50K+ users",
-        "Improved performance by 40% through code splitting and lazy loading",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Conducted weekly code reviews and mentored junior developers",
+      company: "Dutch-Bangla Bank PLC (Rocket)",
+      location: "Head Office, Motijheel, Dhaka, Bangladesh",
+      roles: [
+        {
+          role: "Senior Officer - Software Engineer-II",
+          period: "Sep 2024 - Present",
+          color: "#FFE66D",
+          points: [
+            "Leading design & development of a centralized SSO Identity Provider system from scratch using Oracle PL/SQL, Spring Boot, and React.js.",
+            "Architecting secure authentication workflows and token-based session management for enterprise-wide access control.",
+            "Conducting R&D on AI/ML integration for Transaction Monitoring Systems to enhance fraud detection and compliance.",
+            "Managing requirements gathering, system design, and Oracle database architecture for mission-critical banking modules."
+          ],
+        },
+        {
+          role: "MTO - Software Engineer-I",
+          period: "Aug 2023 - Aug 2024",
+          color: "#4ECDC4",
+          points: [
+            "Built full-stack Transaction Monitoring System (TMS) handling CBS, Mobile, Agent, Card, and Remittance transactions for Bangladesh Bank compliance.",
+            "Developed Enterprise Payment Reporting System for WALTON using Oracle PL/SQL and BI Publisher for automated financial reporting.",
+            "Implemented Loan EMI auto-deduction logic and E2E integration modules, significantly enhancing digital banking automation.",
+            "Developed React.js frontends for ATM Dispute Settlement & Outsource Employee Management systems, streamlining banking operations."
+          ],
+        },
       ],
     },
     {
-      role: "Frontend Developer",
-      company: "DesignStudio Co.",
-      period: "Mar 2021 - Dec 2022",
-      color: "#4ECDC4",
-      points: [
-        "Built responsive web applications using React and Next.js",
-        "Collaborated with designers to implement pixel-perfect UIs",
-        "Integrated third-party APIs and payment gateways",
-        "Optimized SEO and accessibility scores to 95+",
+      company: "Sonali Intellect Limited",
+      location: "Banani, Dhaka, Bangladesh",
+      roles: [
+        {
+          role: "Product Engineer",
+          period: "Apr 2024 - Aug 2024",
+          color: "#A78BFA",
+          points: [
+            "Enhanced Core Banking System (CBS) modules, improving transaction accuracy and operational efficiency for retail/corporate banking.",
+            "Designed 29 comprehensive Trade Finance reports for Rupali Bank using Java, JSF, Oracle PL/SQL, and Jasper Reports.",
+            "Optimized complex SQL queries, resolving database overflow exceptions and significantly improving system scalability and data integrity."
+          ],
+        },
+        {
+          role: "Functional Engineer",
+          period: "Oct 2022 - Mar 2024",
+          color: "#FF6B6B",
+          points: [
+            "Developed and maintained banking system features using Java, JSF, JavaScript, and Oracle PL/SQL aligned with dynamic business requirements.",
+            "Achieved major performance optimization, reducing critical query execution time from hours to approximately 15 minutes.",
+            "Improved code maintainability and database efficiency for mission-critical financial applications handling high-volume transactions."
+          ],
+        },
       ],
     },
     {
-      role: "Junior Developer",
-      company: "StartupXYZ",
-      period: "Jun 2019 - Feb 2021",
-      color: "#FFE66D",
-      points: [
-        "Developed and maintained multiple client-facing web applications",
-        "Integrated REST APIs and third-party services",
-        "Participated in agile development cycles with bi-weekly sprints",
-        "Wrote unit and integration tests achieving 80% code coverage",
+      company: "উদ্ভাস - Udvash Academic & Admission Care",
+      location: "Dhaka, Bangladesh",
+      roles: [
+        {
+          role: "Math Lecturer",
+          period: "Dec 2015 - Mar 2024",
+          color: "#FF6B6B",
+          points: [
+            "Taught university admission aspirants advanced mathematics for competitive exams (DU, BUET, KUET, RUET, CUET medical)",
+            "Prepared lecture notes, practice sheets, and shortcut techniques for fast problem-solving",
+            "Guided 100+ students (if you have a number, add it) through complex topics like calculus, algebra, geometry, and trigonometry",
+            "Provided one-on-one doubt-clearing sessions outside of class"
+          ],
+        },
+
       ],
     },
+
   ];
 
   const projects = [
     {
-      name: "E-Commerce Platform",
-      tech: "Next.js, TypeScript, Stripe",
-      description: "Full-stack e-commerce solution with real-time inventory management and payment processing.",
-      link: "https://github.com",
+      name: "🔐 Single Sign-On (SSO) Identity Provider",
+      tech: "Oracle PL/SQL, Spring Boot, React.js",
+      description: "Centralized authentication system enabling secure access to all in-house applications with token-based session management and unified user provisioning.",
+      link: "#",
+      color: "#FFE66D",
+    },
+    {
+      name: "🚀 Rocket Mobile Financial System",
+      tech: "Java, Oracle PL/SQL, Spring Boot",
+      description: "Core MFS modules including Standing Instructions, Auto-Pay (Bill/P2P/Top-up), and E2E integration handling millions of daily digital transactions.",
+      link: "#",
+      color: "#4ECDC4",
+    },
+    {
+      name: "📊 Transaction Monitoring System (TMS)",
+      tech: "React.js, Spring Boot, Oracle PL/SQL",
+      description: "Compliance-driven alert system generating real-time flags based on Bangladesh Bank criteria across CBS, MBS, CMS, ABS, and Remittance channels.",
+      link: "#",
       color: "#A78BFA",
     },
     {
-      name: "Task Management App",
-      tech: "React, Firebase, Tailwind",
-      description: "Collaborative task manager with real-time sync, drag-and-drop, and team collaboration features.",
-      link: "https://github.com",
-      color: "#34D399",
-    },
-    {
-      name: "Analytics Dashboard",
-      tech: "Vue.js, D3.js, Node.js",
-      description: "Interactive data visualization dashboard with customizable widgets and real-time data streaming.",
-      link: "https://github.com",
-      color: "#F472B6",
+      name: "🏧 ATM/CRM Dispute Settlement System",
+      tech: "React.js, Oracle BI Publisher, SQL",
+      description: "Full-stack platform for ADC & Call Centre to manage and settle disputed ATM/CRM deposit & withdrawal transactions via switch channel integration.",
+      link: "#",
+      color: "#FF6B6B",
     },
   ];
 
   const skills = [
-    { name: "React / Next.js", level: 95 },
-    { name: "TypeScript", level: 90 },
-    { name: "CSS / Tailwind", level: 92 },
-    { name: "Node.js", level: 80 },
-    { name: "GraphQL", level: 75 },
-    { name: "PostgreSQL", level: 70 },
-    { name: "Docker", level: 65 },
-    { name: "AWS", level: 60 },
-  ];
-
-  const blogs = [
-    {
-      title: "Mastering React Server Components",
-      category: "React",
-      date: "Mar 15, 2026",
-      excerpt: "A deep dive into how RSCs change the way we build Next.js applications and improve performance.",
-      link: "#",
-    },
-    {
-      title: "The Art of CSS Architecture",
-      category: "Design",
-      date: "Feb 02, 2026",
-      excerpt: "Exploring scalable CSS methodologies and why utility-first frameworks are winning the ecosystem.",
-      link: "#",
-    },
-    {
-      title: "Web Performance Optimization 101",
-      category: "Performance",
-      date: "Jan 10, 2026",
-      excerpt: "Practical tips to boost Core Web Vitals, reduce bundle size, and improve user experience.",
-      link: "#",
-    },
-    {
-      title: "Accessible UI Patterns",
-      category: "Accessibility",
-      date: "Dec 20, 2025",
-      excerpt: "Building inclusive web experiences with ARIA roles, keyboard navigation, and semantic HTML.",
-      link: "#",
-    },
+    { name: "Java & Spring Boot", level: 95 },
+    { name: "Oracle PL/SQL & DB Design", level: 92 },
+    { name: "System Design & Architecture", level: 88 },
+    { name: "React.js & Next.js", level: 85 },
+    { name: "JavaScript & TypeScript", level: 82 },
+    { name: "Node.js & MERN Stack", level: 78 },
   ];
 
   const education = {
-    degree: "B.S. Computer Science",
-    school: "University of Technology",
-    period: "2015 - 2019",
-    gpa: "3.8/4.0",
-    honors: "Dean's List, ACM Programming Club President",
+    degree: "B.Sc. in Computer Science & Engineering",
+    school: "Khulna University of Engineering & Technology (KUET)",
+    period: "2016 - 2020",
+    gpa: "Class Representative | Dept of CSE",
+    honors: "Active in Algorithmic Programming",
     courses: [
       "Data Structures & Algorithms",
+      "Object-Oriented Programming",
+      "Machine Learning & AI",
       "Operating Systems",
       "Database Management Systems",
       "Computer Networks",
-      "Software Engineering",
-      "Machine Learning Fundamentals",
-      "Human-Computer Interaction",
       "Distributed Systems",
+      "Software Engineering"
     ],
   };
 
   const certifications = [
-    { name: "AWS Certified Developer", issuer: "Amazon Web Services", year: "2020" },
-    { name: "Google Professional Cloud Developer", issuer: "Google Cloud", year: "2021" },
-    { name: "Meta Front-End Developer", issuer: "Meta", year: "2022" },
+    { name: "Database Query & Data Processing (Oracle)", issuer: "Bangladesh Institute of Bank Management", year: "2025" },
+    { name: "Postman API Fundamentals Student Expert", issuer: "Postman / Badgr", year: "2024" },
+    { name: "Programming with JavaScript", issuer: "Meta", year: "2023" },
+    { name: "Java Enterprise Edition (EE) Fundamentals", issuer: "LearnQuest / Coursera", year: "2023" },
   ];
 
   const research = {
     papers: [
       {
-        title: "Optimizing Web Rendering Performance with Edge Computing",
-        type: "Research Paper",
-        year: "2022",
-        description: "Published in IEEE Web Conference. Analyzed edge rendering techniques and their impact on LCP and FCP metrics.",
+        title: "AI/ML Integration for Real-Time Transaction Monitoring in Digital Banking",
+        type: "Ongoing Research",
+        year: "2025",
+        description: "Investigating supervised and unsupervised learning models to detect anomalous transaction patterns and reduce false positives in compliance systems."
       },
       {
-        title: "Accessible Design Patterns for Dynamic Web Applications",
-        type: "Thesis",
-        year: "2019",
-        description: "Graduation thesis exploring WCAG 2.1 compliance in SPA frameworks and proposing a new component library standard.",
+        title: "Optimizing Oracle PL/SQL Performance for High-Volume Financial Reporting",
+        type: "Internal Technical Report",
+        year: "2024",
+        description: "Documented query optimization techniques, index tuning, and execution plan analysis that reduced reporting latency by 95% in core banking modules."
       },
     ],
     interests: [
-      "Web Performance & Core Web Vitals",
-      "Accessibility (a11y) Standards",
-      "Design Systems & Component Architecture",
-      "Edge Computing & Serverless",
+      "Secure Backend Infrastructure",
+      "AI-Driven Financial Systems",
+      "Distributed System Reliability",
+      "Database Performance Tuning",
     ],
   };
 
   const tabItems = [
+    { id: "education", label: "Education" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
-    { id: "blogs", label: "Blogs" },
   ];
 
   const bgColors = {
+    education: "#FCE4EC",
     experience: "#FFF3E0",
     projects: "#E8F5E9",
     skills: "#E3F2FD",
-    blogs: "#FCE4EC",
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF9F0] font-sans">
+    <div className="min-h-screen bg-[#FFF9F0] font-sans text-gray-900">
       {/* Hero Section */}
       <header className="border-b-4 border-black bg-[#FFE66D]">
         <div className="max-w-5xl mx-auto px-6 py-12 md:py-20">
@@ -181,31 +196,31 @@ export default function App() {
             transition={{ duration: 0.5 }}
             className="flex flex-col md:flex-row gap-8 items-center md:items-start"
           >
-            {/* Profile Image */}
+            {/* Profile Image - Replace src with your actual image path */}
             <div className="flex-shrink-0">
               <div className="w-40 h-40 md:w-56 md:h-56 border-4 border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
                 <img
-                  src="https://image.qwenlm.ai/public_source/b4e49cd1-53a7-4c31-86c6-ceb0ee09df6d/1d392a6be-b427-438a-b085-b4761ccdf873.png"
-                  alt="Alex Chen Profile"
+                  src="/your-profile-image.png" // 👈 Replace this with your actual image path
+                  alt="Angkur Mondal Profile"
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
 
             <div className="flex-1 text-center md:text-left">
-              <div className="inline-block bg-black text-white px-3 py-1 text-sm font-bold mb-4 transform -rotate-1">
-                🚀 AVAILABLE FOR HIRE
+              <div className="inline-block bg-black text-white px-3 py-1 text-sm font-bold mb-4 transform -rotate-1 tracking-wide">
+                🚀 SOFTWARE ENGINEER & RESEARCHER
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-black tracking-tight mb-2">
-                Alex Chen
+                Angkur Mondal
               </h1>
               <p className="text-xl md:text-2xl font-bold text-gray-800 mb-4">
-                Senior Frontend Developer & UI Enthusiast
+                Oracle PL/SQL | Java & Spring Boot | System Design
               </p>
               <p className="text-lg max-w-2xl font-medium text-gray-700 leading-relaxed mb-8">
-                I build fast, accessible, and beautiful web experiences. Passionate about design systems, performance optimization, and turning complex problems into simple, elegant solutions.
+                {summary}
               </p>
-              
+
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <a
                   href="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing"
@@ -222,7 +237,7 @@ export default function App() {
                   📧 Contact Me
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/angkur-mondal"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-white border-4 border-black px-6 py-3 text-lg font-bold text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer"
@@ -237,12 +252,11 @@ export default function App() {
 
       {/* Stats Bar */}
       <section className="border-b-4 border-black bg-white">
-        <div className="max-w-5xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-5xl mx-auto px-6 py-8 grid md:grid-cols-3 gap-6">
           {[
-            { num: "7+", label: "Years Exp." },
-            { num: "50+", label: "Projects" },
-            { num: "50K+", label: "Users Served" },
-            { num: "99%", label: "Client Satisfaction" },
+            { num: "3+", label: "Years Exp." },
+            { num: "10M+", label: "Daily Transactions" },
+            { num: "95%↓", label: "Query Optimization" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -266,11 +280,10 @@ export default function App() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`border-4 border-black px-6 py-3 text-lg font-bold transition-all cursor-pointer ${
-                activeTab === tab.id
-                  ? "bg-[#FF6B6B] text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-                  : "bg-white text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-              }`}
+              className={`border-4 border-black px-6 py-3 text-lg font-bold transition-all cursor-pointer ${activeTab === tab.id
+                ? "bg-[#FF6B6B] text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                : "bg-white text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                }`}
             >
               {tab.label}
             </button>
@@ -294,35 +307,52 @@ export default function App() {
               >
                 <h2 className="text-3xl font-black mb-6 flex items-center gap-3">
                   <span className="inline-block w-10 h-10 bg-[#FF6B6B] border-4 border-black flex items-center justify-center text-xl">💼</span>
-                  Work Experience
+                  Career Progression
                 </h2>
-                {experiences.map((exp, i) => (
-                  <motion.div
-                    key={exp.company}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="border-4 border-black p-6 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-                  >
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                      <div>
-                        <h3 className="text-xl font-black">{exp.role}</h3>
-                        <p className="text-lg font-bold text-gray-600">{exp.company}</p>
+
+                <div className="space-y-12">
+                  {experiences.map((company, companyIdx) => (
+                    <div key={companyIdx} className="relative">
+                      {/* Company Header */}
+                      <div className="border-4 border-black bg-white p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mb-8">
+                        <h3 className="text-2xl font-black">{company.company}</h3>
+                        <p className="font-bold text-gray-600">{company.location}</p>
                       </div>
-                      <span className="inline-block bg-black text-white px-3 py-1 text-sm font-bold mt-2 md:mt-0">
-                        {exp.period}
-                      </span>
+
+                      {/* Timeline Container */}
+                      <div className="relative ml-4 md:ml-8 pl-8 border-l-4 border-black space-y-8">
+                        {company.roles.map((role, roleIdx) => (
+                          <div key={roleIdx} className="relative">
+                            {/* Timeline Node */}
+                            <div
+                              className="absolute -left-[20px] top-8 w-5 h-5 bg-white border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-10"
+                              style={{ backgroundColor: role.color }}
+                            />
+                            {/* Role Card */}
+                            <div className="border-4 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <div>
+                                  <h4 className="text-xl font-black">{role.role}</h4>
+                                </div>
+                                <span className="inline-block bg-black text-white px-3 py-1 text-sm font-bold mt-2 md:mt-0">
+                                  {role.period}
+                                </span>
+                              </div>
+                              <ul className="space-y-2">
+                                {role.points.map((point, idx) => (
+                                  <li key={idx} className="flex items-start gap-3 font-medium text-gray-700">
+                                    <span className="inline-block w-2 h-2 mt-2 border-2 border-black flex-shrink-0" style={{ backgroundColor: role.color }} />
+                                    {point}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <ul className="space-y-2 mb-4">
-                      {exp.points.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-3 font-medium text-gray-700">
-                          <span className="inline-block w-2 h-2 mt-2 bg-[#FF6B6B] border-2 border-black flex-shrink-0" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                ))}
+                  ))}
+                </div>
               </motion.div>
             )}
 
@@ -362,7 +392,7 @@ export default function App() {
                         rel="noopener noreferrer"
                         className="inline-block bg-black text-white px-4 py-2 font-bold border-2 border-black hover:bg-white hover:text-black transition-colors cursor-pointer"
                       >
-                        View Project →
+                        View Details →
                       </a>
                     </motion.div>
                   ))}
@@ -381,7 +411,7 @@ export default function App() {
               >
                 <h2 className="text-3xl font-black mb-6 flex items-center gap-3">
                   <span className="inline-block w-10 h-10 bg-[#A78BFA] border-4 border-black flex items-center justify-center text-xl">⚡</span>
-                  Technical Skills
+                  Technical Proficiency
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {skills.map((skill, i) => (
@@ -410,7 +440,7 @@ export default function App() {
               </motion.div>
             )}
 
-            {activeTab === "blogs" && (
+            {activeTab === "education" && (
               <motion.div
                 key="blogs"
                 initial={{ opacity: 0, x: -20 }}
@@ -420,35 +450,33 @@ export default function App() {
                 className="space-y-6"
               >
                 <h2 className="text-3xl font-black mb-6 flex items-center gap-3">
-                  <span className="inline-block w-10 h-10 bg-[#F472B6] border-4 border-black flex items-center justify-center text-xl">✍️</span>
-                  Blog Posts
+                  <span className="inline-block w-10 h-10 bg-white border-4 border-black flex items-center justify-center text-xl">🎓</span>
+                  Education
                 </h2>
-                <div className="grid gap-6">
-                  {blogs.map((blog, i) => (
-                    <motion.a
-                      key={blog.title}
-                      href={blog.link}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="block border-4 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer group"
-                    >
-                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
-                        <div className="flex items-center gap-3">
-                          <span className="bg-[#FFE66D] border-2 border-black px-3 py-1 text-sm font-bold">
-                            {blog.category}
-                          </span>
-                          <span className="text-sm font-bold text-gray-500">{blog.date}</span>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="border-4 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                    <div className="inline-block bg-[#4ECDC4] border-2 border-black px-3 py-1 text-sm font-bold mb-2">
+                      {education.period}
+                    </div>
+                    <h3 className="text-xl font-black">{education.degree}</h3>
+                    <p className="font-bold text-gray-600">{education.school}</p>
+                    <p className="text-gray-700 mt-2 font-medium">
+                      {education.gpa} • {education.honors}
+                    </p>
+                  </div>
+                  <div className="border-4 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                    <h3 className="text-xl font-black mb-4">Core Coursework</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {education.courses.map((course) => (
+                        <div key={course} className="border-2 border-black bg-[#FFF9F0] px-3 py-2 font-bold text-sm flex items-center gap-2">
+                          <span className="w-2 h-2 bg-[#FF6B6B] border border-black" />
+                          {course}
                         </div>
-                        <span className="text-lg font-bold text-[#FF6B6B] group-hover:translate-x-1 transition-transform">
-                          Read More →
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-black mb-2 group-hover:text-[#FF6B6B] transition-colors">{blog.title}</h3>
-                      <p className="text-gray-700 font-medium">{blog.excerpt}</p>
-                    </motion.a>
-                  ))}
+                      ))}
+                    </div>
+                  </div>
                 </div>
+
               </motion.div>
             )}
           </AnimatePresence>
@@ -459,16 +487,16 @@ export default function App() {
           <div className="border-4 border-black bg-[#E3F2FD] p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <h2 className="text-3xl font-black mb-6 flex items-center gap-3">
               <span className="inline-block w-10 h-10 bg-white border-4 border-black flex items-center justify-center text-xl">🔬</span>
-              Research & Interests
+              Research & Academic Focus
             </h2>
-            
+
             <div className="mb-8">
-              <h3 className="text-xl font-black mb-4 border-b-4 border-black pb-2 inline-block">Publications & Thesis</h3>
+              <h3 className="text-xl font-black mb-4 border-b-4 border-black pb-2 inline-block">Ongoing Research & Reports</h3>
               <div className="space-y-4">
                 {research.papers.map((paper, i) => (
                   <div key={i} className="border-4 border-black bg-white p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                     <div className="flex flex-wrap items-center gap-3 mb-2">
-                      <span className={`px-2 py-1 text-sm font-bold border-2 border-black ${paper.type === 'Thesis' ? 'bg-[#A78BFA] text-white' : 'bg-[#4ECDC4] text-white'}`}>
+                      <span className={`px-2 py-1 text-sm font-bold border-2 border-black ${paper.type.includes('Ongoing') ? 'bg-[#A78BFA] text-white' : 'bg-[#4ECDC4] text-white'}`}>
                         {paper.type}
                       </span>
                       <span className="font-bold text-gray-500">{paper.year}</span>
@@ -496,58 +524,25 @@ export default function App() {
           </div>
         </section>
 
-        {/* Education Section */}
-        <section className="mb-12">
-          <div className="border-4 border-black bg-[#FFE66D] p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <h2 className="text-3xl font-black mb-6 flex items-center gap-3">
-              <span className="inline-block w-10 h-10 bg-white border-4 border-black flex items-center justify-center text-xl">🎓</span>
-              Education
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="border-4 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                <div className="inline-block bg-[#4ECDC4] border-2 border-black px-3 py-1 text-sm font-bold mb-2">
-                  {education.period}
-                </div>
-                <h3 className="text-xl font-black">{education.degree}</h3>
-                <p className="font-bold text-gray-600">{education.school}</p>
-                <p className="text-gray-700 mt-2 font-medium">
-                  GPA: {education.gpa} • {education.honors}
-                </p>
-              </div>
-              <div className="border-4 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                <h3 className="text-xl font-black mb-4">Major Courses</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {education.courses.map((course) => (
-                    <div key={course} className="border-2 border-black bg-[#FFF9F0] px-3 py-2 font-bold text-sm flex items-center gap-2">
-                      <span className="w-2 h-2 bg-[#FF6B6B] border border-black" />
-                      {course}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Certifications Section */}
         <section className="mb-12">
           <div className="border-4 border-black bg-[#E8F5E9] p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <h2 className="text-3xl font-black mb-6 flex items-center gap-3">
               <span className="inline-block w-10 h-10 bg-white border-4 border-black flex items-center justify-center text-xl">🏆</span>
-              Certifications
+              Certifications & Credentials
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {certifications.map((cert, i) => (
                 <motion.div
                   key={cert.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="border-4 border-black bg-white p-6 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                  className="border-4 border-black bg-white p-6 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
                 >
-                  <div className="text-4xl mb-3">️</div>
-                  <h3 className="text-lg font-black mb-1">{cert.name}</h3>
-                  <p className="font-bold text-gray-600">{cert.issuer}</p>
+                  <div className="text-4xl mb-3">📜</div>
+                  <h3 className="text-lg font-black mb-1 leading-tight">{cert.name}</h3>
+                  <p className="font-bold text-gray-600 text-sm">{cert.issuer}</p>
                   <span className="inline-block bg-black text-white px-2 py-1 text-sm font-bold mt-3">{cert.year}</span>
                 </motion.div>
               ))}
@@ -569,29 +564,31 @@ export default function App() {
               Get In Touch
             </h2>
             <p className="text-lg font-medium text-gray-700 mb-8">
-              Interested in working together? Let's talk about your next project. I'm always open to discussing new opportunities.
+              Open to discussing software engineering, fintech innovations, research collaborations, and full-stack development opportunities.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <a
-                href="mailto:alex@example.com"
+                href="mailto:angkur.mondal@example.com"
                 className="block border-4 border-black bg-[#FFE66D] p-6 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer"
               >
                 <div className="text-3xl mb-2">📧</div>
                 <div className="font-black text-lg">Email</div>
-                <div className="font-bold text-gray-700">alex@example.com</div>
+                <div className="font-bold text-gray-700 text-sm">angkur.mondal@example.com</div>
               </a>
               <a
-                href="tel:+1234567890"
+                href="https://linkedin.com/in/angkur-mondal"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block border-4 border-black bg-[#4ECDC4] p-6 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer"
               >
-                <div className="text-3xl mb-2">📱</div>
-                <div className="font-black text-lg">Phone</div>
-                <div className="font-bold text-gray-700">+1 (234) 567-890</div>
+                <div className="text-3xl mb-2">💼</div>
+                <div className="font-black text-lg">LinkedIn</div>
+                <div className="font-bold text-gray-700 text-sm">Connect Professionally</div>
               </a>
               <div className="block border-4 border-black bg-[#A78BFA] p-6 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                 <div className="text-3xl mb-2">📍</div>
                 <div className="font-black text-lg">Location</div>
-                <div className="font-bold text-gray-700">San Francisco, CA</div>
+                <div className="font-bold text-gray-700 text-sm">Dhaka, Bangladesh</div>
               </div>
             </div>
           </motion.div>
@@ -601,9 +598,9 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t-4 border-black bg-black text-white py-8">
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-bold text-lg">© 2026 Alex Chen. All rights reserved.</p>
+          <p className="font-bold text-lg">© 2026 Angkur Mondal. All rights reserved.</p>
           <div className="flex gap-4">
-            {["GitHub", "LinkedIn", "Twitter", "Dribbble"].map((social) => (
+            {["GitHub", "LinkedIn"].map((social) => (
               <a
                 key={social}
                 href="#"
