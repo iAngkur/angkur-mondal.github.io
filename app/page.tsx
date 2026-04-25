@@ -1,6 +1,8 @@
 "use client"
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("education");
@@ -198,15 +200,15 @@ export default function Home() {
           >
             {/* Profile Image - Replace src with your actual image path */}
             <div className="flex-shrink-0">
-              <div className="w-40 h-40 md:w-56 md:h-56 border-4 border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
-                <img
-                  src="/your-profile-image.png" // 👈 Replace this with your actual image path
+              <div className="w-40 h-40 md:w-56 md:h-56 border-4 border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative">
+                <Image
+                  src="/my-pic.png"
                   alt="Angkur Mondal Profile"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
-
             <div className="flex-1 text-center md:text-left">
               <div className="inline-block bg-black text-white px-3 py-1 text-sm font-bold mb-4 transform -rotate-1 tracking-wide">
                 🚀 SOFTWARE ENGINEER & RESEARCHER
@@ -291,10 +293,10 @@ export default function Home() {
         </div>
 
         {/* Tab Content */}
-        
+
         <div
           className="border-4 border-black p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-12"
-          style={{ 
+          style={{
             backgroundColor: bgColors[activeTab as keyof typeof bgColors]
           }}
         >
