@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Contact() {
     return (
         <section id="contact" className="border-t-4 border-black bg-[#FF6B6B]">
-            <div className="max-w-5xl mx-auto px-6 py-16">
+            <div className="max-w-5xl mx-auto px-6 py-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -21,12 +21,12 @@ export default function Contact() {
                     </p>
                     <div className="grid md:grid-cols-3 gap-6">
                         <a
-                            href="mailto:angkur.mondal@example.com"
+                            href="mailto:mondal.angkur@gmail.com"
                             className="block border-4 border-black bg-[#FFE66D] p-6 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer"
                         >
                             <div className="text-3xl mb-2">📧</div>
                             <div className="font-black text-lg">Email</div>
-                            <div className="font-bold text-gray-700 text-sm">angkur.mondal@example.com</div>
+                            <div className="font-bold text-gray-700 text-sm">mondal.angkur@gmail.com</div>
                         </a>
                         <a
                             href="https://linkedin.com/in/angkur-mondal"
