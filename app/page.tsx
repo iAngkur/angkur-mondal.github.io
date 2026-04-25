@@ -291,9 +291,12 @@ export default function Home() {
         </div>
 
         {/* Tab Content */}
+        
         <div
           className="border-4 border-black p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-12"
-          style={{ backgroundColor: bgColors[activeTab] }}
+          style={{ 
+            backgroundColor: bgColors[activeTab as keyof typeof bgColors]
+          }}
         >
           <AnimatePresence mode="wait">
             {activeTab === "experience" && (
